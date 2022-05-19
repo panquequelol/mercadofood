@@ -1,22 +1,38 @@
-import React from 'react';
+import { useState } from 'react';
 import Button from './Button';
 
-export default function ItemSmall({ name, price, packageSize, imageUrl }) {
+export default function ItemSmall({
+	name,
+	price,
+	packageSize,
+	imageURL,
+	onSale,
+	salePercentage,
+}) {
+	const priceStyle = onSale ? 'line-through font-normal' : '';
+
 	return (
-		<div className='w-48 lg:w-60 bg-white rounded-lg p-2 shadow-md text-center'>
-			<button className='group transition-all lg:p-2'>
+		<div className='md:w-48 lg:w-60 bg-white rounded-lg shadow-md text-center flex flex-col justify-end'>
+			<button className='group transition-all lg:p-2 mb-2'>
 				<img
-					className='lg:h-48 rounded-lg group-hover:brightness-90 transition-all'
-					src={imageUrl}
+					className='lg:h-48 rounded-t-lg transition-all object-cover group-hover:animate-pulse'
+					src={imageURL}
 					alt={name}
 				/>
 				<h2 className='text-2xl font-bold group-hover:text-gray-500'>{name}</h2>
-				<p className='text-lg group-hover:text-gray-500'>$ {price}</p>
-				<p className='text-gray-500'>{packageSize}</p>
+				<p className='font-semibold text-lg group-hover:text-gray-400'>
+					<span className='font-semibold text-lg text-red-500 group-hover:text-red-400'>
+						{onSale ? `$ ${price - (price * salePercentage) / 100}` : ''}
+					</span>{' '}
+					<span className={priceStyle}>$ {price}</span>
+				</p>
+				<p className='text-gray-500'>
+					{onSale ? <span>{salePercentage} % OFF</span> : packageSize}
+				</p>
 			</button>
-			<div className='text-center'>
-				<Button primary>Add to cart</Button>
-			</div>
+			<button className='bg-red-500 w-full rounded-b-md text-white p-2 font-semibold hover:bg-red-400 hover:ring-2 hover:ring-red-500 transition-all'>
+				Add to cart
+			</button>
 		</div>
 	);
 }

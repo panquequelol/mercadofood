@@ -1,15 +1,19 @@
 # MercadoFood
 ## To-do
 - Front-end
-  - [ ] Landing page
-  - [ ] All categories
-  - [ ] Detailed category
+  - [x] Landing page
+  - [x] All categories
+  - [x] Detailed category
   - [ ] Detailed product
   - [ ] Cart
 - Back-end
-  - [ ] Create schemas
-  - [ ] Schemas validations
-  - [ ] Login / register feature
+  - Create schemas
+    - [x] Product
+    - [ ] User / Admin
+  - Schemas validations
+    - [x] Product
+    - [ ] User / Admin
+  - [ ] Login / register
 
 ## Tech Stack
 - React
