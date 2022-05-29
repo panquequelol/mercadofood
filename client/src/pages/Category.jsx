@@ -25,7 +25,6 @@ export default function Category({ name, categoryProducts }) {
 	}, []);
 	return (
 		<>
-			<Nav />
 			<Layout>
 				<div className='text-center my-8'>
 					<p>Best products on</p>
@@ -33,9 +32,11 @@ export default function Category({ name, categoryProducts }) {
 				</div>
 				<section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 my-4 bg-neutral-100 p-4 rounded-md'>
 					{products.length ? (
-						products.map((product, _id) => (
+						products.map((product) => (
 							<ItemSmall
-								key={_id}
+								key={product._id}
+								id={product._id}
+								category={product.category}
 								imageURL={product.imageURL}
 								name={product.name}
 								price={product.price}

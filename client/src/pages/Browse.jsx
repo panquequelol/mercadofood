@@ -18,7 +18,6 @@ import CategoryCard from '../components/CategoryCard';
 export default function Browse() {
 	return (
 		<>
-			<Nav />
 			<Layout>
 				<h1 className='text-center font-bold text-2xl my-8'>Browse by category</h1>
 				<section className='grid grid-cols-2 md:grid-cols-4 p-2 gap-2'>

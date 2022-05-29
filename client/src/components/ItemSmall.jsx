@@ -1,19 +1,26 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 
 export default function ItemSmall({
+	id,
 	name,
+	category,
 	price,
 	packageSize,
 	imageURL,
 	onSale,
 	salePercentage,
 }) {
+	let navigate = useNavigate();
 	const priceStyle = onSale ? 'line-through font-normal' : '';
 
 	return (
 		<div className='md:w-48 lg:w-60 bg-white rounded-lg shadow-md text-center flex flex-col justify-end'>
-			<button className='group transition-all lg:p-2 mb-2'>
+			<button
+				onClick={() => navigate(`/browse/${category}/${id}`)}
+				className='group transition-all lg:p-2 mb-2'
+			>
 				<img
 					className='lg:h-48 rounded-t-lg transition-all object-cover group-hover:animate-pulse'
 					src={imageURL}

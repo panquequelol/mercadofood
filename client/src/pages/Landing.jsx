@@ -8,7 +8,6 @@ import friesWhite from '../static/img/friesWhite.jpg';
 export default function Landing() {
 	return (
 		<>
-			<Nav landing />
 			<Layout>
 				<div>
 					<section className='grid md:grid-cols-2 items-center md:h-fit'>
@@ -31,14 +30,14 @@ export default function Landing() {
 							</div>
 						</div>
 						<img
-							className='order-first md:order-none rounded-2xl my-4 w-[20vw]'
+							className='order-first md:order-none rounded-2xl my-4 w-full md:w-[28rem]'
 							src={ImgOnlineApp}
 							alt='Women shopping using MercadoFood online app'
 						/>
 					</section>
 					<section className='grid md:grid-cols-2 items-center md:h-fit'>
 						<img
-							className='order-first md:order-none rounded-2xl my-4 w-[20vw]'
+							className='order-first md:order-none rounded-2xl my-4 w-full md:w-[28rem]'
 							src={friesWhite}
 							alt='Women shopping using MercadoFood online app'
 						/>
